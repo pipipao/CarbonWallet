@@ -1,0 +1,107 @@
+{% extends 'home.html' %}
+{% block title %}
+    Bill
+{% endblock %}
+{% block inner %}
+    <div style="padding: 5%">
+        <div class="card text-center">
+            <div class="card-header" style="font-size: 2vh">
+                CarbonWallet
+            </div>
+            <div class="card-body">
+                <h1 class="card-title" style="font-size: 3vh">Take Action</h1>
+                <p class="card-text" style="font-size: 2vh">
+                    Many kinds bills can be credited as "carbon bill", you can earn CarbonCoins by adding them to event.
+                </p>
+                <a href="{{ url_for('addBill') }}" class="btn btn-primary" style="font-size: 2vh">Add a new
+                    event/bill</a>
+            </div>
+            <div class="card-footer text-muted" style="font-size: 2vh">
+                Today's price: 1 CarbonCoin = 2.73 USD
+            </div>
+        </div>
+        <ul class="list-group">
+            {% for bill in bills %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold" style="font-size: 2vh">{{ bill.desc }}</div>
+                        <div class="fw-bold" style="font-size: 2vh">
+                            {% if bill.usdChange %}
+                                USD:{{ bill.usdChange }}
+                            {% endif %}
+                            {% if bill.ccChange %}
+                                CC:{{ bill.ccChange }}
+                            {% endif %}
+                            {% if bill.ethChange %}
+                                ETH:{{ bill.ethChange }}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <span class="badge bg-success rounded-pill" style="font-size: 2vh">
+                        {% if bill.carbonScore %}
+                        {{ bill.carbonScore }}
+                        {% else %}
+                        0
+                        {% endif %}
+                    </span>
+
+                </li>
+            {% endfor %}
+
+
+
+
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Switch to paperless bank bill choice</div>
+                    <div class="fw-bold" style="font-size: 2vh">CC +100</div>
+                </div>
+                <span class="badge bg-success rounded-pill" style="font-size: 2vh">+100</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Subway fee</div>
+                    <div class="fw-bold" style="font-size: 2vh">$ -3</div>
+                </div>
+                <span class="badge bg-success rounded-pill" style="font-size: 2vh">+2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Uber fee</div>
+                    <div class="fw-bold" style="font-size: 2vh">$ -16</div>
+                </div>
+                <span class="badge bg-dark rounded-pill" style="font-size: 2vh">0</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Use CarbonCoin to pay gas fee</div>
+                    <div class="fw-bold" style="font-size: 2vh">CC -210</div>
+                </div>
+                <span class="badge bg-danger rounded-pill" style="font-size: 2vh">-210</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Sell 200 CarbonCoins to peer</div>
+                    <div class="fw-bold" style="font-size: 2vh">ETH +0.0063</div>
+                </div>
+                <span class="badge bg-dark rounded-pill" style="font-size: 2vh">0</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Sell 200 CarbonCoins to a factory</div>
+                    <div class="fw-bold" style="font-size: 2vh">$ +300</div>
+                </div>
+                <span class="badge bg-dark rounded-pill" style="font-size: 2vh">0</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold" style="font-size: 2vh">Reward: Take bus more than 100 times in last year</div>
+                    <div class="fw-bold" style="font-size: 2vh">CC +500</div>
+                </div>
+                <span class="badge bg-success rounded-pill" style="font-size: 2vh">+500</span>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}

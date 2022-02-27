@@ -1,0 +1,75 @@
+{% extends 'home.html' %}
+{% block title %}
+    Collections
+{% endblock %}
+{% block inner %}
+    <div style="text-align: center">
+    <h1 class="display-1" style="margin-top: 3%;font-style: italic"><b>My Collections:</b></h1>
+    </div>
+
+    <div style="padding: 8%">
+        <h1 class="display-1">Achievements:</h1>
+        <div style="margin: 3%"></div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static',filename='imgs/paperlessman.svg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">「PaperlessMan」</h1>
+                        <h2 class="card-text">
+                            Paperless for gas, bank and electricity.
+                        </h2>
+                    </div>
+                    <div class="alert alert-danger" role="alert" style="margin: 2%">
+                        <h2>CC +300</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                    <img src="{{ url_for('static',filename='imgs/wolf.svg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">「The Wolf of Carbon Market」</h1>
+                        <h2 class="card-text">
+                            Spend more than 1000 CarbonCoin.
+                        </h2>
+                    </div>
+                    <div class="alert alert-danger" role="alert" style="margin: 2%">
+                        <h2>CC +200</h2>
+                    </div>
+                </div>
+        </div>
+
+
+    <h1 class="display-1">NFTs:</h1>
+        <div style="margin: 3%"></div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static',filename='imgs/robot.jpeg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">I'm not WALL E</h1>
+                        <h2 class="card-text">
+                            Yeah ! ! ! !  We have a robot here!
+                        </h2>
+                    </div>
+                    <div class="alert alert-primary" role="alert" style="margin: 2%">
+                        <h2>ETH chain</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                    <img src="{{ url_for('static',filename='imgs/chicken.png') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">Doctor</h1>
+                        <h2 class="card-text">
+                            "Hi, do you need help?"
+                        </h2>
+                    </div>
+                    <div class="alert alert-info" role="alert" style="margin: 2%">
+                        <h2>CarbonCoin chain</h2>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+{% endblock %}
